@@ -1,0 +1,10 @@
+# Object files
+*.o
+
+# Executables
+*.exe
+
+# Code::Blocks stuff
+*.cbp
+*.depend
+*.layout
