@@ -4,6 +4,9 @@
 # Executables
 *.exe
 
+# Testing files
+*.test
+
 # Code::Blocks stuff
 *.cbp
 *.depend

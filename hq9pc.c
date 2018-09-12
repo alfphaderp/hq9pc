@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
+#include "lex.c"
 
 int main(const int argc, const char *argv[])
 {
@@ -20,22 +23,14 @@ int main(const int argc, const char *argv[])
         exit(0);
     }
 
-    // All testing code beyond this point. I have no idea what I'm doing...
+    // Lex the file into an intermediate array of instructions
+    char *instructions = lex(fptr);
 
-    // Read the source file into a buffer
-    fseek(fptr, 0, SEEK_END);
-    long fsize = ftell(fptr);
-    fseek(fptr, 0, SEEK_SET);
-    char instructions[fsize];
-    for(long i = 0; i < fsize; i++) {
-
-        instructions[i] = fgetc(fptr);
-    }
-
-    printf("%ld\r\n", fsize);
-    printf("%s\r\n", instructions);
-
+    // Close the file after using it
     fclose(fptr);
+
+    // For testing
+    printf("%s", instructions);
 
     return 0;
 }
